@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="header">
+        <search-bar></search-bar>
+    </div>
+    <div class="result-container">
+        <div *ngFor="let result of searchResult" class="result-item" (onclick)="goToPage(result.url)">
+            <!-- <div class="img-container">
+                <img [src]="image" alt="no image">
+            </div> -->
+            <div class="content-container">
+                <p class="content">{{result.url}}</p>
+                <p class="title">{{result.title}}</p>
+                <p class="content">{{result.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>

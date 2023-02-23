@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.card-container {
+    width: 200px;
+    height: auto;
+    border-radius: .5rem;
+    overflow: hidden;
+    background-color: #eee;
+    border: 2px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+.card-container:hover {
+    background-color: gainsboro;
+    border: 2px solid lightgray;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.img-container {
+    width: auto;
+    height: 100px;
+    overflow: hidden;
+    margin: .25rem;
+    border-radius: .5rem;
+}
+
+.img-container>img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.content-container {
+    padding: 1rem .5rem;
+}
+
+.title, .content {
+    color: darkslategray;
+    margin: 0;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
