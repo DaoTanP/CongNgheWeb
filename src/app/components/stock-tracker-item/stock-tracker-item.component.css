@@ -1,0 +1,18 @@
+.stock-container {
+    display: inline-block;
+    margin: auto;
+    padding: 10px;
+    color: #ecf0f1;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.positive {
+    background-color: #27ae60;
+}
+
+.negative {
+    background-color: #c0392b;
+}
