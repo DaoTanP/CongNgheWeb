@@ -1,5 +1,5 @@
 .stock-container {
-    display: inline-block;
+    display: block;
     margin: auto;
     padding: 10px;
     color: #ecf0f1;
@@ -15,4 +15,15 @@
 
 .negative {
     background-color: #c0392b;
+}
+
+button {
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    background-color: #ecf0f1;
+}
+.favorite {
+    color: #c0392b;
 }

@@ -16,4 +16,8 @@ export class StockTrackerComponent
     new Stock("Twitter", "TWTR", 17.98, 18.03),
   ];
 
+  public addStock (stock: Stock): void
+  {
+    this.stocks.push(stock);
+  }
 }

@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { StockItemComponent } from './components/stock-item/stock-item.component';
 import { StockTrackerItemComponent } from './components/stock-tracker-item/stock-tracker-item.component';
 import { StockTrackerComponent } from './components/stock-tracker/stock-tracker.component';
+import { CreateStockComponent } from './components/create-stock/create-stock.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StockTrackerComponent } from './components/stock-tracker/stock-tracker.
     LoginComponent,
     StockItemComponent,
     StockTrackerItemComponent,
-    StockTrackerComponent
+    StockTrackerComponent,
+    CreateStockComponent
   ],
   imports: [
     BrowserModule,

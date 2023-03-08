@@ -1,0 +1,9 @@
+<form #stockForm="ngForm" method="post" (ngSubmit)="addStock(s)">
+    <input [(ngModel)]="s.name" type="text" name="name" placeholder="Stock Name">
+    <input [(ngModel)]="s.code" type="text" name="code" placeholder="Code">
+    <input [(ngModel)]="s.price" type="text" name="price" placeholder="Price">
+    <select name="exchange">
+        <option value="NASDAQ">NASDAQ</option>
+    </select>
+    <button type="submit">Create</button>
+</form>
