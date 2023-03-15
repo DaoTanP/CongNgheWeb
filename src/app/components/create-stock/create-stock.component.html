@@ -1,9 +1,27 @@
 <form #stockForm="ngForm" method="post" (ngSubmit)="addStock(s)">
-    <input [(ngModel)]="s.name" type="text" name="name" placeholder="Stock Name">
-    <input [(ngModel)]="s.code" type="text" name="code" placeholder="Code">
-    <input [(ngModel)]="s.price" type="text" name="price" placeholder="Price">
-    <select name="exchange">
+    <input [(ngModel)]="s.name" type="text" #name="ngModel" name="name" placeholder="Stock Name" minlength="3">
+    <input [(ngModel)]="s.code" type="text" name="code" placeholder="Code" minlength="2">
+    <input [(ngModel)]="s.price" type="number" name="price" placeholder="Price">
+    <select name="exchange" [(ngModel)]="s.exchange">
         <option value="NASDAQ">NASDAQ</option>
+        <option value="LMAO">LMAO</option>
+        <option value="MEME">MEME</option>
     </select>
-    <button type="submit">Create</button>
+    <input type="checkbox" id="chk" name="chkConfirm" ngModel checked="false">
+    <label for="chk">I confirm that the information privide above is accurate!</label>
+    <button type="submit" [disabled]="!stockForm.value.chkConfirm">Create</button>
 </form>
+
+<div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Name must be at least 3 characters long.
+  </div>
+
+</div>
+</div>

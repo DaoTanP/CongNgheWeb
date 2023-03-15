@@ -1,0 +1,13 @@
+<form [formGroup]="stockForm" (ngSubmit)="addStock(s)">
+    <input type="text" name="name" placeholder="Stock Name" formControlName="name">
+    <input type="text" name="code" placeholder="Code" formControlName="code">
+    <input type="number" name="price" placeholder="Price" formControlName="price">
+    <select name="exchange" formControlName="exchange">
+        <option value="NASDAQ">NASDAQ</option>
+        <option value="LMAO">LMAO</option>
+        <option value="MEME">MEME</option>
+    </select>
+    <input type="checkbox" id="chk" name="chkConfirm" ngModel checked="false">
+    <label for="chk">I confirm that the information privide above is accurate!</label>
+    <button type="submit" [disabled]>Create</button>
+</form>

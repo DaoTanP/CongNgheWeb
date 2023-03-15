@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
@@ -13,6 +13,7 @@ import { StockItemComponent } from './components/stock-item/stock-item.component
 import { StockTrackerItemComponent } from './components/stock-tracker-item/stock-tracker-item.component';
 import { StockTrackerComponent } from './components/stock-tracker/stock-tracker.component';
 import { CreateStockComponent } from './components/create-stock/create-stock.component';
+import { CreateStockReactiveComponent } from './components/create-stock-reactive/create-stock-reactive.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,13 @@ import { CreateStockComponent } from './components/create-stock/create-stock.com
     StockItemComponent,
     StockTrackerItemComponent,
     StockTrackerComponent,
-    CreateStockComponent
+    CreateStockComponent,
+    CreateStockReactiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

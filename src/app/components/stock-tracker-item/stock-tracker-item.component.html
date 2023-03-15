@@ -2,5 +2,6 @@
     <p class="name">{{stock.name + ' - (' + stock.code + ')' }}</p>
     <p class="price">${{stock.price}}</p>
     <p class="price">{{changeAmount.toFixed(2) +' ('+ changeRatio.toFixed(2) +'%)'}}</p>
+    <p>{{stock.exchange}}</p>
     <button (click)="toggleFavorite()" [class]="stock.favorite ? 'favorite': ''">&hearts;</button>
 </div>

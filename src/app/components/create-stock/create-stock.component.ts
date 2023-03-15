@@ -12,7 +12,7 @@ export class CreateStockComponent
   public s: Stock = new Stock('', '', 0, 0);
   public addStock (s: Stock): void
   {
-    let stock = new Stock(s.name, s.code, s.price, s.previousPrice);
+    let stock = new Stock(s.name, s.code, s.price, s.previousPrice, s.exchange);
     this.newItemEvent.emit(stock);
   }
 }
