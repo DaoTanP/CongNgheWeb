@@ -1,32 +1,47 @@
-*{
+* {
     box-sizing: border-box;
 }
-form{
+form {
     max-width: 200px;
     background-color: #00000010;
     padding: 1rem;
     border-radius: 0.5rem;
+    margin: auto 1rem;
 }
-input:not([type="checkbox"]), button {
+button {
     display: inline-block;
     margin: 0.5rem auto;
     width: 100%;
 }
-select{
+input:not([type="checkbox"]) {
+    display: inline-block;
+    margin: 0.5rem auto;
+    width: 100%;
+    padding: 2px;
+    border: none;
+    outline: 1.5px solid #00000093;
+    border-radius: 2px;
+}
+input:not([type="checkbox"]):focus {
+    outline-width: 2.5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+select {
     display: block;
     width: 100%;
 }
 
-input.ng-invalid{
-    background-color: #ff000035;
-}
-input.ng-valid{
+input.ng-valid {
     background-color: #00800035;
 }
-input.ng-touched{
-    background-color: #505cff35;
+input.ng-invalid {
+    background-color: #ff000035;
+}
+input.ng-untouched {
+    background-color: transparent;
 }
 
-.alert{
+.alert {
     color: red;
 }

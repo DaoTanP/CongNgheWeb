@@ -1,19 +1,62 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Stock } from 'src/app/model/stock';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'create-stock-reactive',
   templateUrl: './create-stock-reactive.component.html',
   styleUrls: ['./create-stock-reactive.component.css']
 })
-export class CreateStockReactiveComponent {
+export class CreateStockReactiveComponent
+{
   @Output() newItemEvent = new EventEmitter<Stock>();
-  public s: Stock = new Stock('', '', 0, 0);
-  public stockForm: FormGroup = new FormGroup({});
-  public addStock (s: Stock): void
+
+  public formBuilder: FormBuilder = new FormBuilder();
+  public stockForm: FormGroup = this.formBuilder.group({
+    name: [null, [Validators.required, Validators.minLength(3)]],
+    code: [null, [Validators.required, Validators.minLength(2)]],
+    price: [0, [Validators.required, Validators.min(0)]],
+    exchange: null,
+  });
+  // public stockForm: FormGroup = new FormGroup({
+  //   name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+  //   code: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+  //   price: new FormControl(0, [Validators.required, Validators.min(0)]),
+  //   exchange: new FormControl(null),
+  // });
+
+  public addStock (): void
   {
-    let stock = new Stock(s.name, s.code, s.price, s.previousPrice, s.exchange);
+    const name = this.stockForm.value.name;
+    const code = this.stockForm.value.code;
+    const price = this.stockForm.value.price;
+    const exchange = this.stockForm.value.exchange;
+    let stock = new Stock(name, code, price, price, exchange);
     this.newItemEvent.emit(stock);
+    // this.resetForm();
+    this.stockForm.reset();
   }
+
+  public resetForm (): void
+  {
+    this.stockForm.setValue({
+      name: null,
+      code: null,
+      price: 0,
+      exchange: null
+    });
+    this.stockForm.markAsUntouched();
+    this.stockForm.markAsPristine();
+  }
+
+  get name ()
+  {
+    return this.stockForm.controls['name'];
+  }
+
+  get code ()
+  {
+    return this.stockForm.controls['code'];
+  }
+
 }
