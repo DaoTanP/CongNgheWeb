@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Stock } from 'src/app/model/stock';
+import { Stock } from 'src/app/models/stock';
 
 @Component({
   selector: 'stock-tracker-item',
   templateUrl: './stock-tracker-item.component.html',
   styleUrls: ['./stock-tracker-item.component.css']
 })
+
 export class StockTrackerItemComponent implements OnInit
 {
   @Input() stock: Stock = new Stock('Test Stock Company', 'TSC', 85, 80);

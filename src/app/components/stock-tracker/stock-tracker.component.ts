@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Stock } from 'src/app/model/stock';
+import { Component, OnInit } from '@angular/core';
+import { Stock } from 'src/app/models/stock';
+import { StockService } from 'src/app/services/stock.service';
 
 @Component({
   selector: 'stock-tracker',
@@ -8,16 +9,10 @@ import { Stock } from 'src/app/model/stock';
 })
 export class StockTrackerComponent
 {
-  public stocks = [
-    new Stock("Apple", "AAPL", 109.68, 109.49),
-    new Stock("Google", "GOOG", 747.32, 747.92),
-    new Stock("Facebook", "FB", 115.31, 115.10),
-    new Stock("Amazon", "AMZN", 739.00, 743.65),
-    new Stock("Twitter", "TWTR", 17.98, 18.03),
-  ];
+  public stocks: Stock[];
 
-  public addStock (stock: Stock): void
-  {
-    this.stocks.push(stock);
+  constructor(private stockService: StockService) {
+    this.stocks = this.stockService.get();
   }
+  
 }

@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Stock } from 'src/app/model/stock';
+import { Stock } from 'src/app/models/stock';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { StockService } from 'src/app/services/stock.service';
 
 @Component({
   selector: 'create-stock-reactive',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class CreateStockReactiveComponent
 {
-  @Output() newItemEvent = new EventEmitter<Stock>();
+  // @Output() newItemEvent = new EventEmitter<Stock>();
 
   public formBuilder: FormBuilder = new FormBuilder();
   public stockForm: FormGroup = this.formBuilder.group({
@@ -24,6 +25,8 @@ export class CreateStockReactiveComponent
   //   price: new FormControl(0, [Validators.required, Validators.min(0)]),
   //   exchange: new FormControl(null),
   // });
+  constructor(private stockService: StockService){
+  }
 
   public addStock (): void
   {
@@ -32,8 +35,8 @@ export class CreateStockReactiveComponent
     const price = this.stockForm.value.price;
     const exchange = this.stockForm.value.exchange;
     let stock = new Stock(name, code, price, price, exchange);
-    this.newItemEvent.emit(stock);
-    // this.resetForm();
+    this.stockService.add(stock);
+    // this.newItemEvent.emit(stock);
     this.stockForm.reset();
   }
 

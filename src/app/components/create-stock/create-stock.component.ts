@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Stock } from 'src/app/model/stock';
+import { Stock } from 'src/app/models/stock';
 
 @Component({
   selector: 'create-stock',
