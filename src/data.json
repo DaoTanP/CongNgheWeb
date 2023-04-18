@@ -51,6 +51,22 @@
       "previousPrice": 932,
       "exchange": "MEME",
       "favorite": false
+    },
+    {
+      "name": "SunnyLense2",
+      "code": "SLS",
+      "price": 24,
+      "previousPrice": 24,
+      "exchange": "LMAO",
+      "favorite": false
+    },
+    {
+      "name": "TanApp",
+      "code": "Tan",
+      "price": 52,
+      "previousPrice": 52,
+      "exchange": "MEME",
+      "favorite": false
     }
   ]
 }

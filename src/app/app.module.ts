@@ -15,6 +15,7 @@ import { StockTrackerComponent } from './components/stock-tracker/stock-tracker.
 import { CreateStockComponent } from './components/create-stock/create-stock.component';
 import { CreateStockReactiveComponent } from './components/create-stock-reactive/create-stock-reactive.component';
 import { StockService } from './services/stock.service';
+import { AppRoutesModule } from './app-routes.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { StockService } from './services/stock.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutesModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
