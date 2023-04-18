@@ -16,6 +16,7 @@ import { CreateStockComponent } from './components/create-stock/create-stock.com
 import { CreateStockReactiveComponent } from './components/create-stock-reactive/create-stock-reactive.component';
 import { StockService } from './services/stock.service';
 import { AppRoutesModule } from './app-routes.module';
+import { StockDetailComponent } from './components/stock-detail/stock-detail.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AppRoutesModule } from './app-routes.module';
     StockTrackerItemComponent,
     StockTrackerComponent,
     CreateStockComponent,
-    CreateStockReactiveComponent
+    CreateStockReactiveComponent,
+    StockDetailComponent
   ],
   imports: [
     BrowserModule,

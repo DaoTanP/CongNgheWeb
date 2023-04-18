@@ -1,4 +1,4 @@
-<div class="stock-container" [class]="isPositiveChange">
+<div class="stock-container" [class]="isPositiveChange" routerLink="/stock/{{stock.code}}">
     <p class="name">{{stock.name + ' - (' + stock.code + ')' }}</p>
     <p class="price">${{stock.price}}</p>
     <p class="price">{{changeAmount.toFixed(2) +' ('+ changeRatio.toFixed(2) +'%)'}}</p>

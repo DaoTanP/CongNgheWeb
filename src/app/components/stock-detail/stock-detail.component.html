@@ -1,0 +1,4 @@
+<div>
+    <stock-tracker-item *ngIf="this.stock" [stock]="this.stock"></stock-tracker-item>
+    <div *ngIf="!this.stock">stock not found</div>
+</div>

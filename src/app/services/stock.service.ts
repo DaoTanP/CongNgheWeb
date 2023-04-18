@@ -18,13 +18,17 @@ export class StockService
   {
     return this.stockList;
   }
-  find (name: string)
+  find (code: string)
   {
-    return this.stockList.findIndex(s => s.name === name);
+    return this.stockList.find(s => s.code == code);
+  }
+  findInDatabase ()
+  {
+    return this.httpService.get();
   }
   add (stock: Stock)
   {
-    if (this.find(stock.name) != -1)
+    if (this.find(stock.code))
     {
       return false;
     }

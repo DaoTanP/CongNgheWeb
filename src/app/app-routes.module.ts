@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateStockReactiveComponent } from './components/create-stock-reactive/create-stock-reactive.component';
 import { StockTrackerComponent } from './components/stock-tracker/stock-tracker.component';
+import { StockDetailComponent } from './components/stock-detail/stock-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'stocks', pathMatch: 'full' },
   { path: 'stocks', component: StockTrackerComponent },
+  { path: 'stocks/:code', component: StockDetailComponent },
   { path: 'stocks/create', component: CreateStockReactiveComponent },
   { path: '**', redirectTo: 'stocks' }
 ];
