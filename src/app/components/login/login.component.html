@@ -1,10 +1,10 @@
-<form class="container">
+<form [formGroup]="registerForm" (ngSubmit)="login()" class="container">
     <h1>Đăng nhập</h1>
     <div class="flex-container">
         <label for="name">Tên người dùng</label>
-        <input id="name" type="text">
+        <input type="text" name="username" formControlName="username">
         <label for="password">Mật khẩu</label>
-        <input id="password" type="password">
+        <input type="password" name="password" formControlName="password">
     </div>
-    <button type="submit">Đăng nhập</button>
+    <button type="submit" [disabled]="!registerForm.valid">Đăng nhập</button>
 </form>

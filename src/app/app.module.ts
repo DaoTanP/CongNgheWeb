@@ -17,6 +17,7 @@ import { CreateStockReactiveComponent } from './components/create-stock-reactive
 import { StockService } from './services/stock.service';
 import { AppRoutesModule } from './app-routes.module';
 import { StockDetailComponent } from './components/stock-detail/stock-detail.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -32,7 +33,9 @@ import { StockDetailComponent } from './components/stock-detail/stock-detail.com
     StockTrackerComponent,
     CreateStockComponent,
     CreateStockReactiveComponent,
-    StockDetailComponent
+    StockDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

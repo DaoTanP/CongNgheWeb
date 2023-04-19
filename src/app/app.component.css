@@ -19,3 +19,11 @@
   p {
       margin: 0;
   }
+
+  .container{
+      display: flex;
+      max-width: 500px;
+  }
+  .container > *{
+      margin: auto;
+  }

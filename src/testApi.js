@@ -19,7 +19,7 @@ app.listen(3000, () => {
 });
 
 app.get('/stocks', (req, res) => {
-    res.json(data);
+    res.json(data.stocks);
 });
 
 app.post('/stocks', (req, res) => {
@@ -29,4 +29,17 @@ app.post('/stocks', (req, res) => {
         if (error) throw error;
     });
     res.json(stock);
+});
+
+app.get('/user', (req, res) => {
+    res.json(data.users);
+});
+
+app.post('/users', (req, res) => {
+    const user = req.body;
+    data.users.push(user);
+    fs.writeFile(path.join('src/data.json'), JSON.stringify(data, null, 2), (error) => {
+        if (error) throw error;
+    });
+    res.json(user);
 });

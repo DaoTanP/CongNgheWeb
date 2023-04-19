@@ -11,7 +11,7 @@ export class StockService
   constructor(private httpService: HttpService)
   {
     this.httpService.get().subscribe(data =>
-      data.stocks.forEach((stock: Stock) =>
+      data.forEach((stock: Stock) =>
         this.stockList.push(stock)));
   }
   get ()

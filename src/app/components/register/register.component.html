@@ -1,0 +1,26 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h3>Register</h3>
+    <input type="text" name="username" placeholder="Username" formControlName="username">
+    <!-- <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+        <div *ngIf="username.errors?.['required']">
+            Username is required.
+        </div>
+        <div *ngIf="username.errors?.['minlength']">
+            Username must be at least 3 characters long.
+        </div>
+    </div> -->
+    <input type="password" name="password" placeholder="Password" formControlName="password">
+    <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+        <div *ngIf="password.errors?.['required']">
+            Password is required.
+        </div>
+        <div *ngIf="password.errors?.['minlength']">
+            Password must be at least 8 characters long.
+        </div>
+    </div> -->
+    <button type="submit" [disabled]="!registerForm.valid">Register</button>
+</form>
+
+<!-- {{registerForm.value|json}}<br>
+{{registerForm.status}}<br>
+{{chk.checked}}<br> -->

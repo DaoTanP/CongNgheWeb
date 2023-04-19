@@ -5,12 +5,11 @@ import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent
-{
+export class RegisterComponent {
   public formBuilder: FormBuilder = new FormBuilder();
   public registerForm: FormGroup = this.formBuilder.group({
     username: [null, [Validators.required, Validators.minLength(3)]],
@@ -27,6 +26,6 @@ export class LoginComponent
     let user = new User(username, password);
     this.userService.register(user);
     this.registerForm.reset();
-    this.router.navigate(['stocks']);
+    this.router.navigate(['/login']);
   }
 }

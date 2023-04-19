@@ -68,5 +68,15 @@
       "exchange": "MEME",
       "favorite": false
     }
+  ],
+  "users": [
+    {
+      "username": "Tan",
+      "password": "password"
+    },
+    {
+      "username": "admin",
+      "password": "adminadmin"
+    }
   ]
 }
