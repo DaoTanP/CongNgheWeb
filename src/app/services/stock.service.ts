@@ -20,7 +20,7 @@ export class StockService
   }
   find (code: string)
   {
-    return this.stockList.find(s => s.code == code);
+    return this.stockList.find(s => s.code === code);
   }
   findInDatabase ()
   {

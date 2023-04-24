@@ -15,7 +15,6 @@ export class StockDetailComponent
   {
     const code = this.route.snapshot.paramMap.get('code') || '';
 
-    this.stockService.findInDatabase().subscribe(data =>
-      this.stock = data.stocks.find((s: Stock) => s.code == code));
+    this.stock = this.stockService.get().find((s: Stock) => s.code == code);
   }
 }

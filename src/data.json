@@ -2,8 +2,8 @@
   "stocks": [
     {
       "id": 1,
-      "name": "Test Stock Company",
-      "code": "TSC",
+      "name": "Nikkei 225",
+      "code": "NIK",
       "price": "85",
       "previousPrice": "80",
       "exchange": "NASDAQ",
@@ -11,8 +11,8 @@
     },
     {
       "id": 2,
-      "name": "Second Stock Company",
-      "code": "SSC",
+      "name": "FTSE 100",
+      "code": "FTSE",
       "price": "10",
       "previousPrice": "20",
       "exchange": "NSE",
@@ -20,21 +20,12 @@
     },
     {
       "id": 3,
-      "name": "Last Stock Company",
-      "code": "LSC",
+      "name": "CBOE Volatility",
+      "code": "CBOE",
       "price": "876",
       "previousPrice": "765",
       "exchange": "NYSE",
       "favorite": false
-    },
-    {
-      "name": "Last Stock Company",
-      "code": "LSC",
-      "price": "876",
-      "previousPrice": "765",
-      "exchange": "NYSE",
-      "favorite": false,
-      "id": 4
     },
     {
       "name": "SunnyLenses",
@@ -53,19 +44,11 @@
       "favorite": false
     },
     {
-      "name": "SunnyLense2",
-      "code": "SLS",
-      "price": 24,
-      "previousPrice": 24,
-      "exchange": "LMAO",
-      "favorite": false
-    },
-    {
-      "name": "TanApp",
-      "code": "Tan",
-      "price": 52,
-      "previousPrice": 52,
-      "exchange": "MEME",
+      "name": "Shanghai Composite",
+      "code": "SHCOMP",
+      "price": 3301.26,
+      "previousPrice": 3301.26,
+      "exchange": "NASDAQ",
       "favorite": false
     }
   ],

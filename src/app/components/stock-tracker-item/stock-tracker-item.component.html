@@ -1,7 +1,15 @@
-<div class="stock-container" [class]="isPositiveChange" routerLink="/stocks/{{stock.code}}">
-    <p class="name">{{stock.name + ' - (' + stock.code + ')' }}</p>
-    <p class="price">${{stock.price}}</p>
-    <p class="price">{{changeAmount.toFixed(2) +' ('+ changeRatio.toFixed(2) +'%)'}}</p>
-    <p>{{stock.exchange}}</p>
-    <button (click)="toggleFavorite()" [class]="stock.favorite ? 'favorite': ''">&hearts;</button>
-</div>
+<mat-card [class]="isPositiveChange" style="width: 192px;">
+    <mat-card-header routerLink="/stocks/{{stock.code}}">
+        <mat-card-subtitle>{{stock.name + ' - (' + stock.code + ')' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>${{stock.price}}</p>
+        <p>{{changeAmount.toFixed(2) +' ('+ changeRatio.toFixed(2) +'%)'}}</p>
+        <p>{{stock.exchange}}</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-icon-button (click)="toggleFavorite()" [class]="stock.favorite ? 'favorite': ''">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

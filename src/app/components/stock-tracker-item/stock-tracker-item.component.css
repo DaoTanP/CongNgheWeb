@@ -14,7 +14,8 @@
 }
 
 .negative {
-    background-color: #c0392b;
+    /* background-color: #c0392b; */
+    background-color: hsl(6, 93%, 66%);
 }
 
 button {

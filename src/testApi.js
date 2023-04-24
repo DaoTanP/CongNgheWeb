@@ -31,7 +31,7 @@ app.post('/stocks', (req, res) => {
     res.json(stock);
 });
 
-app.get('/user', (req, res) => {
+app.get('/users', (req, res) => {
     res.json(data.users);
 });
 

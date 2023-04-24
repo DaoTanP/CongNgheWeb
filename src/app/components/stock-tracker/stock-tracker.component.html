@@ -1,12 +1,23 @@
-<h3>Stock Tracker</h3>
-<div class="container">
-    <stock-tracker-item *ngFor="let stock of stocks" [stock]=stock>
-    </stock-tracker-item>
-</div>
-<h3>Favorite</h3>
-<div class="container">
-    <div *ngFor="let s of stocks">
-        <stock-tracker-item [stock]=s *ngIf="s.favorite">
-        </stock-tracker-item>
-    </div>
-</div>
+<mat-accordion>
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Stock</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container">
+            <stock-tracker-item *ngFor="let stock of stocks" [stock]=stock>
+            </stock-tracker-item>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Favorite Stock</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container">
+            <div *ngFor="let s of stocks">
+                <stock-tracker-item [stock]=s *ngIf="s.favorite">
+                </stock-tracker-item>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

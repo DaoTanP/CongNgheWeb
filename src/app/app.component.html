@@ -1,6 +1,28 @@
-<div class="container">
-  <a routerLink="/login" routerLinkActive="active">Login</a>
-  <a routerLink="/stocks" routerLinkActive="active">Stock List</a>
-  <a routerLink="/stocks/create" routerLinkActive="active">Create Stock</a>
-</div>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span routerLink="/stocks" routerLinkActive="active" style="cursor: pointer;">Stock Market</span>
+  <span style="flex: 1 1 auto;"></span>
+  <button mat-icon-button>
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="mat-elevation-z8" mode="side">
+    <button mat-button class="menu-button" routerLink="/stocks" routerLinkActive="active">
+      <mat-icon>currency_bitcoin</mat-icon>
+      <span>Stock List</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/stocks/create" routerLinkActive="active">
+      <mat-icon>add</mat-icon>
+      <span>Create Stock</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

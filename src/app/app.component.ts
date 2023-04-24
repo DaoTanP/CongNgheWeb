@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from './services/api.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +8,9 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent
 {
-  constructor(private api: ApiService)
+  protected isLoggedIn = false;
+  constructor(private userService: UserService)
   {
-    this.api.getProducts().subscribe(res =>
-      (res as any).products.forEach((p: any) =>
-      {
-        // this.cards.push({ title: p.title, content: p.description, img: p.thumbnail })
-        this.search.push({ title: p.title, content: p.description, url: p.thumbnail })
-      }));
+    this.isLoggedIn = this.userService.isLoggedIn();
   }
-  cards: Card[] = [];
-  search: any[] = [{ title: 'aaa', content: 'bbb', url: 'ccc' }];
-}
-
-interface Card
-{
-  title: string;
-  content: string;
-  img: string;
 }

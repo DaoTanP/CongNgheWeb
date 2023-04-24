@@ -18,7 +18,15 @@ import { StockService } from './services/stock.service';
 import { AppRoutesModule } from './app-routes.module';
 import { StockDetailComponent } from './components/stock-detail/stock-detail.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,15 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutesModule
+    AppRoutesModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatExpansionModule,
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
